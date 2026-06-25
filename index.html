@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JH Auto Electrical &amp; Air Conditioning — Frankton, Hamilton | Call 022 023 6851</title>
+<meta name="description" content="JH Auto Electrical & Air Conditioning — qualified auto electricians in Frankton, Hamilton. Diagnostics, batteries, auto A/C, wiring and heavy diesel & machinery. Fast turnaround, transparent pricing. Call or text 022 023 6851." />
+<meta name="theme-color" content="#123a6b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --red:#d8232a;
+    --red-deep:#b51d23;
+    --blue:#123a6b;
+    --blue-deep:#0d2b50;
+    --blue-bright:#1c5bb8;
+    --charcoal:#1c1f24;
+    --ink:#2a2e35;
+    --grey:#5d646e;
+    --line:#e4e7eb;
+    --paper:#ffffff;
+    --paper-2:#f4f6f9;
+    --paper-3:#eef1f5;
+    --shadow:0 22px 50px -26px rgba(18,58,107,.42);
+    --shadow-sm:0 12px 30px -18px rgba(18,58,107,.4);
+    --head:'Barlow Semi Condensed',system-ui,sans-serif;
+    --body:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--head);line-height:1.04;color:var(--charcoal);font-weight:800;letter-spacing:-.01em}
+  p{color:var(--grey)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1200px,92vw);margin:0 auto}
+
+  .eyebrow{font-family:var(--head);font-weight:700;font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .eyebrow.b{color:var(--blue-bright)}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:.6em;justify-content:center;font-family:var(--head);font-weight:700;
+    font-size:1rem;letter-spacing:.03em;text-transform:uppercase;padding:1em 1.9em;border-radius:8px;cursor:pointer;
+    border:2px solid transparent;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s,color .3s}
+  .btn svg{width:19px;height:19px}
+  .btn-call{background:var(--red);color:#fff;box-shadow:0 14px 30px -14px rgba(216,35,42,.85)}
+  .btn-call:hover{background:var(--red-deep);transform:translateY(-3px);box-shadow:0 20px 38px -14px rgba(216,35,42,.9)}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-blue:hover{background:var(--blue-deep);transform:translateY(-3px)}
+  .btn-ghost{background:transparent;color:var(--blue);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--blue);background:var(--paper-2);transform:translateY(-3px)}
+
+  /* ---------- logo badge ---------- */
+  .badge{display:flex;align-items:center;gap:13px}
+  .badge .oval{
+    width:66px;height:48px;border-radius:50%;flex:0 0 auto;position:relative;background:#fff;
+    border:2.5px solid var(--blue);display:grid;place-items:center;box-shadow:inset 0 0 0 2px #fff,0 4px 12px -6px rgba(18,58,107,.5);
+    transition:transform .4s;overflow:hidden;
+  }
+  .badge .oval::before{content:"";position:absolute;left:0;right:0;top:0;height:42%;
+    background:radial-gradient(120% 160% at 50% -40%,rgba(28,91,184,.16),transparent 70%)}
+  .badge:hover .oval{transform:rotate(-4deg)}
+  .badge .oval .car{position:absolute;bottom:5px;width:40px;color:var(--red);opacity:.92}
+  .badge .oval b{font-family:var(--head);font-weight:800;color:var(--red);font-size:1.5rem;line-height:1;letter-spacing:-.02em;margin-bottom:5px;z-index:1}
+  .badge .txt{display:flex;flex-direction:column;line-height:1.05}
+  .badge .txt .n{font-family:var(--head);font-weight:800;font-size:1.16rem;letter-spacing:.01em;color:var(--charcoal);text-transform:uppercase}
+  .badge .txt .n em{color:var(--red);font-style:normal}
+  .badge .txt small{font-family:var(--head);font-weight:600;font-size:.6rem;letter-spacing:.22em;color:var(--blue);text-transform:uppercase;margin-top:2px}
+
+  /* ---------- header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:70;padding:16px 0;transition:padding .35s,background .35s,box-shadow .35s}
+  header.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 2px 14px -6px rgba(18,58,107,.3);padding:9px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:22px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--head);font-weight:600;font-size:.96rem;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);position:relative;transition:color .3s}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--red);transition:width .3s}
+  .nav-links a:not(.btn):hover{color:var(--blue)}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links .btn{padding:.65em 1.2em;font-size:.9rem}
+  .nav .badge .oval{width:54px;height:40px}
+  .nav .badge .oval b{font-size:1.25rem}
+  .nav .badge .oval .car{width:32px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:26px;height:2px;background:var(--charcoal);transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:92svh;display:flex;align-items:center;padding:120px 0 64px;overflow:hidden;background:var(--blue-deep)}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(100deg,rgba(13,43,80,.96) 0%,rgba(13,43,80,.9) 42%,rgba(13,43,80,.66) 72%,rgba(13,43,80,.5) 100%)}
+  /* red arc nod to the badge */
+  .hero-bg::before{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;z-index:1;
+    border:46px solid rgba(216,35,42,.16);}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-inner{max-width:680px}
+  .hero h1{color:#fff;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;margin:18px 0 0}
+  .hero h1 .r{color:var(--red)}
+  .hero .sub{font-family:var(--head);font-weight:600;color:#cfe0f5;font-size:clamp(1rem,1.8vw,1.2rem);letter-spacing:.02em;margin-top:18px}
+  .hero .sub b{color:#fff;font-weight:700}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-trust{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:38px}
+  .hero-trust .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:600;font-size:.9rem;
+    color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.5em 1em;border-radius:50px}
+  .hero-trust .pill .star{color:#ffc83d}
+  .hero-trust .pill .ok{color:#5fd08a}
+
+  /* entrance */
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .hero-inner>*{opacity:0;animation:rise .85s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero-inner>*:nth-child(1){animation-delay:.1s}
+  .hero-inner>*:nth-child(2){animation-delay:.22s}
+  .hero-inner>*:nth-child(3){animation-delay:.34s}
+  .hero-inner>*:nth-child(4){animation-delay:.46s}
+  .hero-inner>*:nth-child(5){animation-delay:.58s}
+
+  .fade{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+  .fade.in{opacity:1;transform:none}
+
+  /* ---------- trust bar ---------- */
+  .trustbar{background:var(--red);color:#fff}
+  .trustbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .trustbar .t{display:flex;align-items:center;gap:12px;padding:22px 18px;border-right:1px solid rgba(255,255,255,.18)}
+  .trustbar .t:last-child{border-right:0}
+  .trustbar .t svg{flex:0 0 auto;width:26px;height:26px}
+  .trustbar .t b{font-family:var(--head);font-weight:700;font-size:1.02rem;display:block;line-height:1.1}
+  .trustbar .t small{font-size:.78rem;opacity:.85}
+
+  /* ---------- sections ---------- */
+  .pad{padding:clamp(74px,10vw,128px) 0}
+  .shead{max-width:720px;margin-bottom:clamp(40px,6vw,66px)}
+  .shead.center{margin-inline:auto;text-align:center}
+  .shead h2{font-size:clamp(2rem,4.6vw,3.3rem);text-transform:uppercase}
+  .shead h2 .r{color:var(--red)}
+  .shead h2 .b{color:var(--blue)}
+  .shead p{margin-top:16px;font-size:1.08rem;max-width:58ch}
+  .shead.center p{margin-inline:auto}
+
+  /* ---------- services ---------- */
+  .services{background:var(--paper-2)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 30px;position:relative;overflow:hidden;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+  .svc-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .4s}
+  .svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:transparent}
+  .svc-card:hover::before{transform:scaleY(1)}
+  .svc-card .ic{width:56px;height:56px;border-radius:12px;background:var(--paper-3);display:grid;place-items:center;color:var(--blue);margin-bottom:20px;transition:background .4s,color .4s}
+  .svc-card:hover .ic{background:var(--blue);color:#fff}
+  .svc-card h3{font-size:1.4rem;text-transform:uppercase;margin-bottom:10px;letter-spacing:0}
+  .svc-card p{font-size:.95rem;margin-bottom:14px}
+  .svc-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+  .svc-card li{font-family:var(--head);font-weight:500;font-size:.78rem;letter-spacing:.02em;color:var(--blue);background:var(--paper-2);border:1px solid var(--line);padding:.35em .8em;border-radius:50px}
+  .svc-card.feature{background:var(--charcoal);border-color:var(--charcoal)}
+  .svc-card.feature h3,.svc-card.feature p{color:#fff}
+  .svc-card.feature p{color:rgba(255,255,255,.72)}
+  .svc-card.feature .ic{background:var(--red);color:#fff}
+  .svc-card.feature li{color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+  .svc-card.feature .tagm{position:absolute;top:18px;right:18px;font-family:var(--head);font-weight:700;font-size:.66rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);background:#fff;padding:.35em .7em;border-radius:4px}
+  .svc-card.feature:hover{box-shadow:0 26px 54px -24px rgba(0,0,0,.6)}
+
+  /* ---------- about ---------- */
+  .about{background:#fff}
+  .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(34px,6vw,76px);align-items:center}
+  .about-photo{position:relative}
+  .about-photo .main{border-radius:16px;overflow:hidden;aspect-ratio:5/4;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .about-photo .main img{width:100%;height:100%;object-fit:cover}
+  .about-photo .stat{position:absolute;left:-16px;bottom:-18px;background:var(--blue);color:#fff;border-radius:14px;padding:20px 26px;box-shadow:var(--shadow-sm);text-align:center;border:3px solid #fff}
+  .about-photo .stat b{font-family:var(--head);font-weight:800;font-size:2.2rem;line-height:1;display:block}
+  .about-photo .stat small{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
+  .about-text h2{font-size:clamp(2rem,4.4vw,3.1rem);text-transform:uppercase;margin-bottom:8px}
+  .about-text h2 .r{color:var(--red)}
+  .about-text p+p{margin-top:14px}
+  .why{list-style:none;display:grid;gap:14px;margin-top:26px}
+  .why li{display:flex;gap:14px;align-items:flex-start}
+  .why li .tick{flex:0 0 auto;width:30px;height:30px;border-radius:8px;background:var(--red);color:#fff;display:grid;place-items:center;margin-top:2px}
+  .why li b{font-family:var(--head);font-weight:700;color:var(--charcoal);display:block;font-size:1.05rem}
+  .why li span{font-size:.94rem;color:var(--grey)}
+  .about-note{margin-top:24px;font-size:.86rem;color:var(--grey);font-style:italic;border-left:3px solid var(--line);padding-left:14px}
+
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--paper-2)}
+  .gal-grid{columns:3;column-gap:18px}
+  .gal-item{break-inside:avoid;margin-bottom:18px;border-radius:12px;overflow:hidden;position:relative;border:1px solid var(--line);background:var(--paper-3);box-shadow:var(--shadow-sm)}
+  .gal-item img{width:100%;display:block;min-height:160px;transition:transform .8s ease}
+  .gal-item:hover img{transform:scale(1.06)}
+  .gal-item img.broken{opacity:0}
+  .gal-item .cap{position:absolute;left:0;right:0;bottom:0;color:#fff;font-family:var(--head);font-weight:600;font-size:.82rem;
+    letter-spacing:.04em;padding:28px 14px 12px;background:linear-gradient(to top,rgba(13,43,80,.86),transparent);opacity:0;transition:opacity .4s}
+  .gal-item:hover .cap{opacity:1}
+
+  /* ---------- reviews ---------- */
+  .reviews{background:#fff}
+  .rev-top{display:flex;flex-wrap:wrap;justify-content:center;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:36px}
+  .rev-top .c{flex:1 1 170px;text-align:center;padding:26px 18px;border-right:1px solid var(--line)}
+  .rev-top .c:last-child{border-right:0}
+  .rev-top .c b{font-family:var(--head);font-weight:800;font-size:2.3rem;color:var(--blue);line-height:1;display:block}
+  .rev-top .c b .star{color:#f5a623}
+  .rev-top .c small{font-family:var(--head);font-weight:600;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-top:6px;display:block}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rev-card{border:1px solid var(--line);border-radius:14px;padding:30px 28px;display:flex;flex-direction:column;gap:13px;background:#fff;transition:transform .4s,box-shadow .4s}
+  .rev-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+  .rev-card .stars{color:#f5a623;letter-spacing:.1em;font-size:.95rem}
+  .rev-card p{color:var(--ink);font-size:1.02rem;line-height:1.55}
+  .rev-card .who{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--grey);margin-top:auto}
+  .rev-card .who .v{color:var(--red)}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--blue-deep);color:#fff;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;left:-160px;bottom:-160px;width:480px;height:480px;border-radius:50%;border:44px solid rgba(216,35,42,.12)}
+  .contact .wrap{position:relative;z-index:2}
+  .contact .shead h2{color:#fff}
+  .contact .shead p{color:rgba(255,255,255,.78)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);align-items:start}
+  .call-hero{display:block;background:var(--red);border-radius:16px;padding:26px 30px;margin-bottom:16px;transition:.3s;box-shadow:0 16px 36px -16px rgba(216,35,42,.7)}
+  .call-hero:hover{background:var(--red-deep);transform:translateY(-3px)}
+  .call-hero small{font-family:var(--head);font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:8px}
+  .call-hero b{font-family:var(--head);font-weight:800;font-size:2.5rem;letter-spacing:-.01em;display:block;margin-top:6px;line-height:1}
+  .c-rows{display:grid;gap:0}
+  .c-row{display:flex;gap:14px;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .c-row .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:#fff}
+  .c-row .lab{font-family:var(--head);font-weight:600;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:2px}
+  .c-row a,.c-row .v{color:#fff;font-size:1.04rem;font-weight:500}
+  .c-row a:hover{color:#ffd0d2}
+  .c-extra{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .c-extra a{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;font-size:.88rem;
+    border:1px solid rgba(255,255,255,.26);border-radius:8px;padding:.7em 1.1em;color:#fff;transition:.3s}
+  .c-extra a:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+  .form-card{background:#fff;border-radius:16px;padding:30px;box-shadow:var(--shadow)}
+  .form-card h3{color:var(--charcoal);text-transform:uppercase;font-size:1.4rem;margin-bottom:6px}
+  .form-card .sub{color:var(--grey);font-size:.9rem;margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{font-family:var(--head);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:6px}
+  .field input,.field textarea{width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper-2);
+    border:1.5px solid var(--line);border-radius:9px;padding:.8em .9em;transition:border-color .3s,background .3s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+  .field textarea{resize:vertical;min-height:88px}
+  .form-card .btn-call{width:100%;margin-top:6px}
+  .form-note{font-size:.78rem;color:var(--grey);text-align:center;margin-top:12px}
+  .map{margin-top:30px;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,.14);min-height:300px;position:relative}
+  .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* ---------- sticky mobile call bar ---------- */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;
+    background:var(--red);box-shadow:0 -6px 22px -8px rgba(0,0,0,.4)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;font-family:var(--head);
+    font-weight:800;font-size:1.12rem;letter-spacing:.04em;text-transform:uppercase;padding:15px}
+  .callbar a svg{width:21px;height:21px}
+  .callbar .txt-sub{font-weight:600;font-size:.7rem;opacity:.85;letter-spacing:.1em}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--charcoal);color:rgba(255,255,255,.62);padding:54px 0 38px}
+  footer .ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer .badge .txt .n{color:#fff}
+  footer .badge .oval{background:#fff}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:8px 22px}
+  footer .fnav a{font-family:var(--head);font-weight:600;font-size:.9rem;letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:.3s}
+  footer .fnav a:hover{color:#fff}
+  footer .fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:22px}
+  footer small{font-size:.8rem;color:rgba(255,255,255,.5)}
+  footer .by{color:#ff9a9d}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .about-grid{grid-template-columns:1fr;gap:54px}
+    .about-photo{max-width:480px}
+    .gal-grid{columns:2}
+    .rev-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .trustbar .wrap{grid-template-columns:1fr 1fr}
+    .trustbar .t:nth-child(2){border-right:0}
+    .trustbar .t{border-bottom:1px solid rgba(255,255,255,.18)}
+  }
+  @media(max-width:720px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:100%;left:4vw;right:4vw;flex-direction:column;align-items:flex-start;
+      gap:18px;background:#fff;border-radius:12px;padding:24px;box-shadow:var(--shadow)}
+    .nav-links.open .btn{width:100%}
+    .burger{display:flex}
+    header.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    header.menu-open .burger span:nth-child(2){opacity:0}
+    header.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .callbar{display:block}
+    body{padding-bottom:58px}
+    .svc-grid{grid-template-columns:1fr}
+    .gal-grid{columns:1}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="badge" aria-label="JH Auto Electrical home">
+      <span class="oval">
+        <b>JH</b>
+        <svg class="car" viewBox="0 0 64 26" fill="currentColor" aria-hidden="true"><path d="M4 20c0-2 1-3 3-4l5-7c1-1 3-2 5-2h20c3 0 5 1 7 3l6 6c3 1 5 2 5 5v2H4v-3Zm10 5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm32 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+      </span>
+      <span class="txt"><span class="n">JH <em>Auto</em> Electrical</span><small>&amp; Air Conditioning</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+64220236851" class="btn btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+        Call now
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=1500&q=80&auto=format&fit=crop" alt="Auto electrician working on a vehicle" onerror="this.style.display='none'" />
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow" style="color:#ff8388">Frankton, Hamilton · Auto Electrical &amp; Air Conditioning</span>
+      <h1>Auto electrical <span class="r">you can trust</span>.</h1>
+      <p class="sub">Cars · Trucks · Heavy diesel &amp; machinery. <b>Call or text — fast turnaround, no long waits.</b></p>
+      <div class="hero-cta">
+        <a href="tel:+64220236851" class="btn btn-call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+          Call 022 023 6851
+        </a>
+        <a href="https://www.google.com/maps?q=12+Bandon+Street,+Frankton,+Hamilton+3204" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.7 7-11a7 7 0 0 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Get directions
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span class="pill"><span class="star">★</span> 5.0 Google</span>
+        <span class="pill">41 Reviews</span>
+        <span class="pill"><span class="ok">✓</span> Fully Qualified</span>
+        <span class="pill"><span class="ok">✓</span> Fast Turnaround</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trustbar">
+  <div class="wrap">
+    <div class="t"><svg viewBox="0 0 24 24" fill="#ffc83d"><path d="m12 2 3 6.5 7 .6-5.3 4.6L18.5 21 12 17.3 5.5 21l1.8-7.3L2 9.1l7-.6L12 2Z"/></svg><div><b>5.0★ Rating</b><small>41 Google reviews</small></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Fully Qualified</b><small>Auto electrician</small></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Same-Day Service</b><small>Fast turnaround</small></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><div><b>Transparent Pricing</b><small>No surprises</small></div></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services pad" id="services">
+  <div class="wrap">
+    <div class="shead fade">
+      <span class="eyebrow">What we do</span>
+      <h2>Auto electrical, <span class="r">done right</span>.</h2>
+      <p>From a flat battery to a full diesel rewire — proper diagnostics, quality parts and honest advice on cars, trucks and machinery.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card fade">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-5 4 10 2-5h6"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Diagnostics &amp; Fault Finding</h3>
+        <p>12V &amp; 24V systems scanned with professional gear — we find the real fault, fast.</p>
+        <ul><li>Fault codes</li><li>Engine / ABS</li><li>Airbag · ECU</li></ul>
+      </div>
+
+      <div class="svc-card fade">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M7 7V5h4v2M16 11h2M7 11h4"/></svg></div>
+        <h3>Batteries, Alternators &amp; Starters</h3>
+        <p>Charging and starting system checks and replacements — often sorted same-day.</p>
+        <ul><li>Battery test</li><li>Alternators</li><li>Starter motors</li></ul>
+      </div>
+
+      <div class="svc-card feature fade">
+        <span class="tagm">Specialty</span>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Auto Air Conditioning &amp; Heating</h3>
+        <p>Diagnosis, regas, compressor &amp; condenser replacement, custom A/C hose manufacturing and full HVAC — cars, trucks and machinery.</p>
+        <ul><li>Regas</li><li>Compressors</li><li>Custom hoses</li><li>HVAC</li></ul>
+      </div>
+
+      <div class="svc-card fade">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h6m4 0h6M10 12l-3-3m3 3-3 3m4-3 3-3m-3 3 3 3"/></svg></div>
+        <h3>Electrical Repairs &amp; Wiring</h3>
+        <p>Rewiring, lights and indicators, wiring repairs and full rewires on older vehicles.</p>
+        <ul><li>Lights</li><li>Wiring repair</li><li>Full rewires</li></ul>
+      </div>
+
+      <div class="svc-card feature fade">
+        <span class="tagm">Heavy duty</span>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16V8h12v8M14 11h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+        <h3>Heavy Diesel &amp; Machinery</h3>
+        <p>Trucks (Kenworth, Western Star), excavators and posi-tracks. Heavy-duty cooling you can trust.</p>
+        <ul><li>Trucks</li><li>Excavators</li><li>Posi-tracks</li></ul>
+      </div>
+
+      <div class="svc-card fade">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg></div>
+        <h3>Accessories &amp; Electronics</h3>
+        <p>Reversing cameras, fuel pumps, sensors, gauges, horns, seat electrics and hybrid systems.</p>
+        <ul><li>Cameras</li><li>Sensors</li><li>Hybrid systems</li></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about pad" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo fade">
+      <div class="main">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&q=80&auto=format&fit=crop" alt="JH Auto Electrical workshop" onerror="this.src='https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=900&q=80&auto=format&fit=crop'" />
+      </div>
+      <div class="stat"><b>3+</b><small>Years trusted<br>in Hamilton</small></div>
+    </div>
+    <div class="about-text fade">
+      <span class="eyebrow b">Why choose us</span>
+      <h2>Skilled, honest, <span class="r">local</span>.</h2>
+      <p>JH Auto Electrical &amp; Air Conditioning is a fully qualified Hamilton auto electrician with strong experience across everyday passenger vehicles AND serious heavy-diesel trucks and machinery. Whatever's on your driveway or in your yard, we've worked on it.</p>
+      <p>Auto electrics can feel like a guessing game — that's exactly what we're not. We diagnose properly, explain what's going on in plain English, and tell you the cost up front. No nasty surprises.</p>
+      <ul class="why">
+        <li><span class="tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></span><div><b>Fast, same-day turnaround</b><span>We know your vehicle is how you get things done.</span></div></li>
+        <li><span class="tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></span><div><b>Fair, transparent pricing</b><span>Tony's known for explaining the repair and the cost before any work starts.</span></div></li>
+        <li><span class="tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></span><div><b>Cars to heavy machinery</b><span>One trusted local for the family car and the digger.</span></div></li>
+      </ul>
+      <p class="about-note">More about the team, owner and qualifications coming soon — we'll add JH's full story here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery pad" id="gallery">
+  <div class="wrap">
+    <div class="shead center fade">
+      <span class="eyebrow">Our work</span>
+      <h2>On the <span class="b">tools</span>.</h2>
+      <p>Diagnostics, A/C, wiring and heavy-diesel jobs through the workshop. Real job photos going up here soon.</p>
+    </div>
+    <div class="gal-grid" id="galGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="shead center fade">
+      <span class="eyebrow">Reviews</span>
+      <h2>Rated <span class="r">5.0★</span> by Hamilton drivers.</h2>
+    </div>
+    <div class="rev-top fade">
+      <div class="c"><b>5.0<span class="star">★</span></b><small>Google rating</small></div>
+      <div class="c"><b>41</b><small>Reviews</small></div>
+      <div class="c"><b>100%</b><small>Recommend</small></div>
+      <div class="c"><b>Qualified</b><small>Auto electrician</small></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Fair, transparent price and top quality work. Explained exactly what was wrong and what it'd cost before starting. Highly recommend."</p>
+        <span class="who">— A/C <span class="v">regas &amp; repair</span></span>
+      </div>
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Sorted my auto electrical fault same day when no one else could. Great communication the whole way through. Proper professional."</p>
+        <span class="who">— Diagnostics <span class="v">&amp; fault finding</span></span>
+      </div>
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Did the wiring on our truck and kept us informed the whole time. Quality workmanship, fair price, friendly. Won't go anywhere else."</p>
+        <span class="who">— Heavy <span class="v">diesel wiring</span></span>
+      </div>
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Friendly, fast and reliable. Honest about what needed doing and what didn't. Really reassuring when you don't know cars."</p>
+        <span class="who">— Battery <span class="v">&amp; alternator</span></span>
+      </div>
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Affordable and the quality of work is excellent. Great with our machinery — clearly knows heavy diesel inside out."</p>
+        <span class="who">— Machinery <span class="v">A/C &amp; cooling</span></span>
+      </div>
+      <div class="rev-card fade">
+        <span class="stars">★★★★★</span>
+        <p>"Professional from start to finish. Clear pricing, kept me updated, and the job was done right. Exactly what you want."</p>
+        <span class="who">— Auto <span class="v">electrical repair</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div class="shead center fade">
+      <span class="eyebrow" style="color:#ff8388">Get in touch</span>
+      <h2>Call or text — we'll sort it.</h2>
+      <p>Fast turnaround, no long waits. Give us a ring, flick a text, or send the quick form and we'll get straight back to you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade">
+        <a href="tel:+64220236851" class="call-hero">
+          <small><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> Tap to call or text · mobile</small>
+          <b>022 023 6851</b>
+        </a>
+        <div class="c-rows">
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
+            <div><div class="lab">Landline</div><a href="tel:+6478461987">07 846 1987</a></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <div><div class="lab">Email</div><a href="mailto:jhautoelectrical@gmail.com">jhautoelectrical@gmail.com</a></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.7 7-11a7 7 0 0 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><div class="lab">Workshop</div><span class="v">12 Bandon Street, Frankton, Hamilton 3204</span></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><div class="lab">Hours</div><span class="v">Mon–Fri 8am–6pm · Sat 9am–4:30pm · Sun closed</span></div>
+          </div>
+        </div>
+        <div class="c-extra">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+            Message us on Facebook
+          </a>
+        </div>
+        <div class="map">
+          <iframe title="JH Auto Electrical location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=12+Bandon+Street,+Frankton,+Hamilton+3204,+New+Zealand&output=embed"></iframe>
+        </div>
+      </div>
+
+      <div class="form-card fade">
+        <h3>Quick enquiry</h3>
+        <p class="sub">Fill this in and it'll open an email ready to send — or just call, it's faster!</p>
+        <form id="enqForm">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" autocomplete="name" required /></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" required /></div>
+          <div class="field"><label for="f-vehicle">Vehicle (make / model / year)</label><input id="f-vehicle" type="text" placeholder="e.g. 2014 Ford Ranger" /></div>
+          <div class="field"><label for="f-need">What do you need?</label><textarea id="f-need" placeholder="Tell us what's going on…"></textarea></div>
+          <button type="submit" class="btn btn-call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 18 9-18 9 4-9-4-9Z"/></svg>
+            Send enquiry
+          </button>
+          <p class="form-note">Prefer to talk? Call or text <a href="tel:+64220236851" style="color:var(--red);font-weight:600">022 023 6851</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <a href="#top" class="badge" aria-label="JH Auto Electrical">
+        <span class="oval"><b>JH</b><svg class="car" viewBox="0 0 64 26" fill="currentColor"><path d="M4 20c0-2 1-3 3-4l5-7c1-1 3-2 5-2h20c3 0 5 1 7 3l6 6c3 1 5 2 5 5v2H4v-3Zm10 5a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm32 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></span>
+        <span class="txt"><span class="n">JH <em style="color:var(--red);font-style:normal">Auto</em> Electrical</span><small style="color:rgba(255,255,255,.6)">&amp; Air Conditioning</small></span>
+      </a>
+      <nav class="fnav">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Our Work</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="fbot">
+      <small>12 Bandon Street, Frankton, Hamilton 3204 · Call or text 022 023 6851 · 07 846 1987</small>
+      <small>© <span id="yr"></span> JH Auto Electrical &amp; Air Conditioning</small>
+      <small class="by">Sample site by Will · Websites by Will</small>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CALL BAR ============ -->
+<div class="callbar">
+  <a href="tel:+64220236851">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+    <span>Call or text 022 023 6851</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header solid on scroll
+  var header = document.getElementById('header');
+  function onScroll(){ header.classList.toggle('solid', window.scrollY > 30); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var burger = document.getElementById('burger'), nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    header.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); header.classList.remove('menu-open'); });
+  });
+
+  // gallery (Unsplash placeholders — swap in JH's real job photos later)
+  var GAL = [
+    ['Engine bay diagnostics','1486006920555-c77dcf18193c'],
+    ['Auto A/C work','1632823469850-2f77dd9c7f93'],
+    ['Diagnostic scan tools','1581092335397-9583eb92d232'],
+    ['Heavy diesel engine','1493238792000-8113da705763'],
+    ['Wiring & repairs','1632823471565-1ecdf5c6da77'],
+    ['Truck electrics','1601584115197-04ecc0da31d7'],
+    ['Battery & charging','1619642751034-765dfdf7c58e'],
+    ['Under the bonnet','1530046339160-ce3e530c7d2f'],
+    ['Workshop','1487754180451-c456f719a1fc']
+  ];
+  var grid = document.getElementById('galGrid');
+  GAL.forEach(function(g){
+    var fig = document.createElement('figure');
+    fig.className = 'gal-item fade';
+    var img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = g[0] + ' — JH Auto Electrical';
+    img.src = 'https://images.unsplash.com/photo-' + g[1] + '?w=600&q=80&auto=format&fit=crop';
+    img.onerror = function(){ img.classList.add('broken'); };
+    var cap = document.createElement('span'); cap.className = 'cap'; cap.textContent = g[0];
+    fig.appendChild(img); fig.appendChild(cap);
+    grid.appendChild(fig);
+  });
+
+  // scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+
+  // enquiry form -> pre-filled mailto (no server)
+  document.getElementById('enqForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = (document.getElementById('f-name').value || '').trim();
+    var phone = (document.getElementById('f-phone').value || '').trim();
+    var vehicle = (document.getElementById('f-vehicle').value || '').trim();
+    var need = (document.getElementById('f-need').value || '').trim();
+    var subject = 'Website enquiry — ' + (name || 'new customer');
+    var body =
+      'Name: ' + name + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Vehicle: ' + vehicle + '\n\n' +
+      'What they need:\n' + need + '\n';
+    window.location.href = 'mailto:jhautoelectrical@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
